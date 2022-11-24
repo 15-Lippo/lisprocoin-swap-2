@@ -1,0 +1,59 @@
+{
+  "extends": [
+    "@antfu",
+    "plugin:import/recommended",
+  ],
+  "rules": {
+    "no-console": "off",
+    "brace-style": [
+      "error",
+      "1tbs"
+    ],
+    "@typescript-eslint/brace-style": [
+      "error",
+      "1tbs"
+    ],
+    "curly": [
+      "error",
+      "all"
+    ],
+    "prefer-promise-reject-errors": [
+      "error",
+      {
+        "allowEmptyReject": true
+      }
+    ],
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      "never"
+    ],
+    "@typescript-eslint/consistent-type-definitions": [
+      "error",
+      "type"
+    ],
+    /**
+     * ESLint import rules
+     */
+    "import/no-extraneous-dependencies": 1,
+    "import/namespace": "off"
+  },
+  "settings": {
+    "import/core-modules": [
+      "react"
+    ],
+    "import/resolver": {
+      "alias": {
+        "map": [
+          [
+            "@",
+            "./src"
+          ]
+        ],
+        "extensions": [
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
+  }
+}

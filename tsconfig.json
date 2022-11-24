@@ -1,45 +1,51 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    "downlevelIteration": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "incremental": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true
+    "jsx": "react-jsx",
+    "lib": [
+      "es2019",
+      "es2017",
+      "dom"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "es2021",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "types": [
+      "node",
+      // TODO: Remove once issue is fixed
+      // https://github.com/microsoft/TypeScript/issues/42873
+      "@ethersproject/providers"
+    ]
   },
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "components/Navbars/VerticalNarbar/VerticalNavToken/index.tsx",
-    "components/DefiInterfaces/DexSwapLayout/DexTokens/index.tsx",
-    "pages/swapinterface.tsx",
-    "components/DefiInterfaces/WalletInterface/index.tsx",
-    "components/DefiInterfaces/WalletInterface/SelectButton.js",
-    "components/Tables/Pools/index.tsx",
-    "components/Buttons/ChainsButton/index.js",
-    "components/Buttons/ChainsButton/index.js",
-    "components/Category/DexSelectBtn/index.js",
-    "components/Category/DexTicker/index.js",
-    "components/Category/Overview/index.tsx",
-    "components/Category/Tokens/index.tsx",
-    "components/Category/Tokens/TokenTable/index.js",
-    "components/Category/Pools/index.tsx",
-    "components/Category/Pools/PoolTable/index.tsx",
-    "components/Graphs/LiquidityChart/index.tsx",
-    "components/Graphs/VolumeChart/index.js",
-    "components/DefiInterfaces/WalletInterface/Balances/index.tsx",
-    "components/DefiInterfaces/SwapInterface/DexTokens/index.js",
-    "components/DefiInterfaces/DexSwapLayout/SwapInterface/index.tsx",
-    "components/Category/DexSelectBtn/index.js"
+    "src"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "build/**/*",
+    "node_modules",
+    "**/node_modules",
+    "**/node_modules/**",
+    ".husky",
+    "**/*.md",
+    "docs/**/*",
+    "**/*.json"
+  ]
 }
